@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../header"); %>
+  <body>
+    <%- include("../menu"); %>
+
+    <style>
+      #login-card {
+        position: absolute;
+        top: 15%;
+        left: 30%;
+        margin-top: -50px;
+        margin-left: -15px;
+      }
+
+      #login {
+        width: 500px;
+      }
+
+      @media screen and (max-width: 990px) {
+        #login-card {
+          position: relative;
+          top: 0%;
+          left: 0%;
+          margin-top: 0px;
+          margin-left: 0px;
+        }
+
+        #login {
+          width: 100% !important;
+        }
+      }
+    </style>
+
+    <!-- Material form register -->
+    <section id="login-card" class="form-gradient mb-5">
+      <div id="login" class="card">
+        <div class="header aqua-gradient" style="margin-bottom : 20px;">
+          <div class="row d-flex justify-content-center">
+            <h3 class="white-text mb-0 py-5 font-weight-bold">Login</h3>
+          </div>
+        </div>
+
+        <!--Card content-->
+        <div class="card-body px-lg-5 pt-0">
+          <!-- Form -->
+          <form
+            id="LoginForm"
+            class="text-center"
+            style="color: #757575;"
+            action="#!"
+          >
+            <!-- E-mail -->
+            <div class="md-form mt-0">
+              <input type="email" id="email" class="form-control" required />
+              <label for="email">Input E-mail</label>
+            </div>
+
+            <!-- Password -->
+            <div class="md-form">
+              <input
+                type="password"
+                id="password"
+                class="form-control"
+                required
+                aria-describedby="materialRegisterFormPasswordHelpBlock"
+              />
+              <label for="email">Input Password</label>
+            </div>
+
+            <!-- Log In button -->
+            <div class="row d-flex align-items-center mb-3 mt-4">
+              <!--Grid column-->
+              <div class="col-md-12">
+                <div class="text-center">
+                  <button
+                    type="submit"
+                    class="btn btn-grey btn-rounded z-depth-1a"
+                  >
+                    Send
+                  </button>
+                </div>
+              </div>
+              <!--Grid column-->
+            </div>
+          </form>
+
+          <!-- Form -->
+        </div>
+      </div>
+    </section>
+    <!-- Material form register -->
+    <%-include("../footer");%>
+    <script>
+      $(function() {
+        $("#LoginForm").submit(event => {
+          event.preventDefault(); //껌벅이는거 막아줌
+          //등록
+          const email = $("#email").val();
+          const password = $("#password").val();
+
+          $.ajax({
+            url: "/api/user/login",
+            type: "POST",
+            data: { email, password }
+          })
+            .done(() => {
+              location.href = "/";
+            })
+            .fail((request, status, error) => {
+              alert(request.responseText);
+            });
+        });
+      });
+    </script>
+  </body>
+</html>

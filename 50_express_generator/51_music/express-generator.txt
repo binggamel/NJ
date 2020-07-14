@@ -1,0 +1,8 @@
+1. Express Generator 생성기
+
+2. npm i -g express Generator
+express --view=ejs 51_music
+
+
+npx express-Generator --view=ejs 52_music
+

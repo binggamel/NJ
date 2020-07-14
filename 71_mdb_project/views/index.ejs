@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("header"); %>
+  <body>
+    <%- include("menu"); %>
+
+    <!--Section: Content-->
+    <section class="dark-grey-text" style="padding : 2%">
+      <div class="row pr-lg-5">
+        <div class="col-md-7 mb-4">
+          <div class="view">
+            <img
+              src="https://mdbootstrap.com/img/illustrations/graphics(4).png"
+              class="img-fluid"
+              alt="smaple image"
+            />
+          </div>
+        </div>
+        <div class="col-md-5 d-flex align-items-center">
+          <div>
+            <h3 class="font-weight-bold mb-4">For Channel</h3>
+
+            <p>
+              유튜브 영상 제작 팀 프로젝트를 운영하고 있는 당신을 위한 곳
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!--Section: Content-->
+
+    <div class="container z-depth-1 my-5 py-5 px-4 px-lg-0">
+      <!-- Section -->
+      <section>
+        <style>
+          .timeline {
+            position: relative;
+            list-style: none;
+            padding: 1rem 0;
+            margin: 0;
+          }
+
+          .timeline::before {
+            content: "";
+            position: absolute;
+            left: 50%;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            margin-left: -1px;
+            background-color: #50a1ff;
+          }
+
+          .timeline-element {
+            position: relative;
+            width: 50%;
+            padding: 1rem 0;
+            padding-right: 2.5rem;
+            text-align: right;
+          }
+
+          .timeline-element::before {
+            content: "";
+            position: absolute;
+            right: -8px;
+            top: 1.35rem;
+            display: inline-block;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            border: 2px solid #50a1ff;
+            background-color: #fff;
+          }
+
+          .timeline-element:nth-child(even)::before {
+            right: auto;
+            left: -8px;
+          }
+
+          .timeline-element:nth-child(even) {
+            margin-left: 50%;
+            padding-left: 2.5rem;
+            padding-right: 0;
+            text-align: left;
+          }
+
+          @media (max-width: 767.98px) {
+            .timeline::before {
+              left: 8px;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .timeline-element {
+              width: 100%;
+              text-align: left;
+              padding-left: 2.5rem;
+              padding-right: 0;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .timeline-element::before {
+              top: 1.25rem;
+              left: 1px;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .timeline-element:nth-child(even) {
+              margin-left: 0rem;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .timeline-element {
+              width: 100%;
+              text-align: left;
+              padding-left: 2.5rem;
+              padding-right: 0;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .timeline-element:nth-child(even)::before {
+              left: 1px;
+            }
+          }
+
+          @media (max-width: 767.98px) {
+            .timeline-element::before {
+              top: 1.25rem;
+            }
+          }
+        </style>
+
+        <h3 class="font-weight-bold text-center dark-grey-text pb-2">
+          For Channel <br />
+          How to start? Let's go!
+        </h3>
+        <hr class="w-header my-4" />
+        <p class="lead text-center text-muted pt-2 mb-5">
+          이제 유튜브 팀원들 끼리만의 피드백창구를 만들어 작업 효율을
+          높여보세요!
+        </p>
+
+        <div class="row">
+          <div class="col-lg-8 mx-auto">
+            <ol class="timeline">
+              <li class="timeline-element">
+                <h5 class="font-weight-bold dark-grey-text mb-3">
+                  만들고자 하는(운영하는) 채널이 있나요?
+                </h5>
+                <p class="grey-text font-small">
+                  당장. 만들어.
+                </p>
+                <p class="text-muted">
+                  "For channel"을 사용하면 체널 제작자들 만의 피드백 공간이
+                  탄생합니다! <br />
+                  작업 효율을 높여줄 "For Channel"! 지금 시작해 봅시다
+                </p>
+              </li>
+
+              <li class="timeline-element">
+                <h5 class="font-weight-bold dark-grey-text mb-3">
+                  우리만을 위한 일터
+                </h5>
+                <p class="grey-text font-small">
+                  당장. 시작해.
+                </p>
+                <p>
+                  <img
+                    class="img-fluid z-depth-1-half rounded"
+                    src="../public/images/channelid.png"
+                    alt="..."
+                  />
+                </p>
+                <p class="text-muted">
+                  <br />
+                  채널 아이디를 등록한 후<br />디렉터, 에디터, 디자이너, 패널 등
+                  체널 제작자 업로드 된 영상에 개별 comment를 달 수 있습니다!
+                </p>
+              </li>
+
+              <li class="timeline-element">
+                <h5 class="font-weight-bold dark-grey-text mb-3">
+                  Todo List, Idea
+                </h5>
+                <p class="grey-text font-small">
+                  당장. 메모해.
+                </p>
+                <img
+                  class="img-fluid z-depth-1-half rounded"
+                  src="https://thecompanion.in/wp-content/uploads/2018/05/creator-1.jpg"
+                  alt="..."
+                />
+                <p class="text-muted">
+                  <br />
+                  뿐만 아니라 할일, 아이디어 메모창을 이용해 영상 창작 의지를
+                  마음껏 뽐내주세요~!
+                </p>
+              </li>
+
+              <li class="timeline-element">
+                <h5 class="font-weight-bold dark-grey-text mb-3">
+                  지금 시작하기
+                </h5>
+                <p class="grey-text font-small">
+                  당장. ㄱ.
+                </p>
+                <p class="text-muted">
+                  지금 시작해 볼까요?
+                </p>
+                <button
+                  type="button"
+                  class="btn btn-primary"
+                  onclick="location.href='/api/user/signup'"
+                >
+                  Sign Up
+                </button>
+              </li>
+            </ol>
+          </div>
+        </div>
+      </section>
+      <!-- Section -->
+    </div>
+
+    <%-include("footer");%>
+  </body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("../header"); %>
+  <body>
+    <%- include("../menu"); %>
+    <!-- Material form register -->
+    <div class="card">
+      <!--Card content-->
+      <div class="card-body px-lg-5 pt-0">
+        <!-- Form -->
+        <form
+          id="signupForm"
+          class="text-center"
+          style="color: #757575;"
+          action="#!"
+        >
+          <h5><br />안녕하세요! 관리자 모드입니다:)</h5>
+          <div class="form-row">
+            <div class="col">
+              <!-- name -->
+              <div class="md-form">
+                <input type="text" id="name" class="form-control" required />
+                <label for="name">Input Name</label>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <select
+              id="selected"
+              class="browser-default custom-select"
+              onchange="alert_select_value(this);"
+            >
+              <option value="" disabled selected
+                >Choose your role! (only one!)</option
+              >
+              <option value="Head">Head</option>
+              <option value="Panel">Panel</option>
+              <option value="Designer">Designer</option>
+              <option value="Director">Director</option>
+              <option value="Editor">Editor</option>
+              <option value="PM">Project Manager</option>
+            </select>
+          </div>
+
+          <div class="md-form mt-0">
+            <input type="text" id="channel" class="form-control" required />
+            <label for="channel">Input Channel Code</label>
+          </div>
+
+          <!-- E-mail -->
+          <div class="md-form mt-0">
+            <input type="email" id="email" class="form-control" required />
+            <label for="email">Input E-mail</label>
+          </div>
+
+          <!-- Password -->
+          <div class="md-form">
+            <input
+              type="password"
+              id="password"
+              class="form-control"
+              required
+              aria-describedby="materialRegisterFormPasswordHelpBlock"
+            />
+            <label for="email">Input Password</label>
+          </div>
+
+          <!-- Sign up button -->
+          <button
+            class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect z-depth-0"
+            type="submit"
+          >
+            Sign up
+          </button>
+        </form>
+
+        <!-- Form -->
+      </div>
+    </div>
+    <!-- Material form register -->
+    <%-include("../footer");%>
+
+    <script>
+      var alert_select_value = function(select_obj) {
+        // 우선 selectbox에서 선택된 index를 찾고
+        var selected_index = select_obj.selectedIndex;
+        // 선택된 index의 value를 찾고
+        var selected_value = select_obj.options[selected_index].value;
+        //alert(selected_value);
+      };
+
+      $(function() {
+        $("#signupForm").submit(event => {
+          event.preventDefault(); //껌벅이는거 막아줌
+          //등록
+          const name = $("#name").val();
+          const roles = $("#selected option:selected").text();
+          const channel = $("#channel").val();
+          const email = $("#email").val();
+          const password = $("#password").val();
+
+          $.ajax({
+            url: "/api/user/signup",
+            type: "POST",
+            data: { name, roles, channel, email, password }
+          })
+            .done(() => {
+              alert("회원가입 성공!");
+              location.href = "/api/user/login";
+            })
+            .fail((request, status, error) => {
+              alert(request.responseText);
+            });
+        });
+      });
+    </script>
+  </body>
+</html>
