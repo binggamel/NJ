@@ -11,3 +11,8 @@
 5. espress-generator
 6. mongodb
 7. view
+
+## NodeProject-ForChannel
+
+- api/upload/upload.ctrl
+- 구글 api 유튜브data key
