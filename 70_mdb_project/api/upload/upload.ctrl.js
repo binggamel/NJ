@@ -25,7 +25,7 @@ const list = (req, res) => {
   var url =
     "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" +
     channel +
-    "&order=date&maxResults=30&key=AIzaSyBhyUqp6uGQlmEIoQGo3FLWLEBUSSPDWws&type=video";
+    "&order=date&maxResults=30&key=AIzaSyBgkEnmrsUNipuvUrQP5urN1QcoWFaRn4Y&type=video";
 
   function call(nextToken) {
     var req = require("axios");
@@ -59,7 +59,7 @@ const detail = (req, res) => {
   var url =
     "https://www.googleapis.com/youtube/v3/search?part=snippet&channelId=" +
     channel +
-    "&order=date&maxResults=30&key=AIzaSyBhyUqp6uGQlmEIoQGo3FLWLEBUSSPDWws&type=video&q=" +
+    "&order=date&maxResults=30&key=AIzaSyBgkEnmrsUNipuvUrQP5urN1QcoWFaRn4Y&type=video&q=" +
     id;
 
   function call(nextToken) {
